@@ -62,7 +62,7 @@ disable:
   triggers: true
 repositories:
 - name: kogito-pipelines
-  branch: michibk_testSetup
+  branch: michibkTestSetup
 - name: kogito-runtimes
   branch: main
 - name: kogito-apps

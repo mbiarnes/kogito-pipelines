@@ -14,7 +14,7 @@ ecosystem:
     - kie-tools.*
 git:
   branches:
-  - name: michibk_testSetup
+  - name: michibkTestSetup
   - name: main
     main_branch: true
     seed:
@@ -29,7 +29,7 @@ seed:
       author:
         name: mbiarnes
         credentials_id: mbiarnes
-      branch: michibk_testSetup
+      branch: michibkTestSetup
     path: .ci/jenkins/config/branch.yaml
   jenkinsfile: dsl/seed/jenkinsfiles/Jenkinsfile.seed.branch
 jenkins:
