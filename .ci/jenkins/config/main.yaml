@@ -12,51 +12,13 @@ ecosystem:
     ignore_productization: true
     regexs:
     - kie-tools.*
-  - name: kie-docs
-    ignore_release: true
-    ignore_productization: true
-    regexs:
-    - kie-docs.*
 git:
   branches:
+  - name: michibk_testSetup
   - name: main
     main_branch: true
     seed:
       branch: main
-  - name: 1.13.x
-    old_folder_structure: true
-    seed:
-      branch: 1.13.x
-      config_file:
-        path: dsl/seed/config/branch.yaml
-      jenkinsfile: dsl/seed/jobs/Jenkinsfile.seed.branch
-  - name: 1.13.x-blue
-    old_folder_structure: true
-    seed:
-      branch: 1.13.x-blue
-      config_file:
-        path: dsl/seed/config/branch.yaml
-      jenkinsfile: dsl/seed/jobs/Jenkinsfile.seed.branch
-  - name: 1.29.x
-    seed:
-      branch: seed-kogito-1.29.x
-      config_file:
-        path: dsl/config/branch.yaml
-  - name: 1.38.x-prod
-    seed:
-      branch: seed-kogito-1.38.x
-      config_file:
-        path: dsl/config/branch.yaml
-  - name: 1.40.x
-    seed:
-      branch: seed-kogito-1.40.x
-      config_file:
-        path: dsl/config/branch.yaml
-  - name: 1.40.x-prod
-    seed:
-      branch: seed-kogito-1.40.x
-      config_file:
-        path: dsl/config/branch.yaml
   - name: 1.44.x
     seed:
       branch: seed-kogito-1.44.x
@@ -65,10 +27,10 @@ seed:
     git:
       repository: kogito-pipelines
       author:
-        name: kiegroup
-        credentials_id: kie-ci3
-      branch: main
+        name: mbiarnes
+        credentials_id: mbiarnes
+      branch: michibk_testSetup
     path: .ci/jenkins/config/branch.yaml
   jenkinsfile: dsl/seed/jenkinsfiles/Jenkinsfile.seed.branch
 jenkins:
-  email_creds_id: KOGITO_CI_EMAIL_TO
+  email_creds_id: MBIARNES_MAIL

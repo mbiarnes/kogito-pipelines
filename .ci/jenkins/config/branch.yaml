@@ -58,43 +58,44 @@ environments:
     auto_generation: false
     ids:
     - ecosystem
-productized_branch: true
 disable:
-  triggers: false
+  triggers: true
 repositories:
 - name: kogito-pipelines
+  branch: michibk_testSetup
 - name: kogito-runtimes
+  branch: main
 - name: kogito-apps
+  branch: main
 - name: kogito-examples
+  branch: main
 - name: kogito-images
+  branch: main
 - name: kogito-operator
+  branch: main
 - name: kogito-serverless-operator
-- name: kie-tools
-- name: kogito-docs
-- name: kie-docs
-  branch: main-kogito
-productized_repositories:
-- name: kogito-pipelines
-- name: kogito-runtimes
-- name: kogito-apps
-- name: kogito-examples
-- name: kogito-images
-- name: kogito-serverless-operator
-- name: kogito-operator
-- name: kogito-docs
+  branch: main
+job_types:
+  setup-branch:
+    disabled: true
+  nightly:
+    disabled: true
+  other:
+    disabled: false
+  pullrequest:
+    disabled: false
+  release:
+    disabled: true
+  tools:
+    disabled: true
 git:
   author:
-    name: kiegroup
-    credentials_id: kie-ci3
-    token_credentials_id: kie-ci3-token
+    name: mbiarnes
+    credentials_id: mbiarnes
+    token_credentials_id: mbiarnes-gh-token
   fork_author:
-    name: kie-ci
-    credentials_id: kie-ci
-  quarkus:
-    author:
-      name: quarkusio
-      credentials_id: kie-ci
-    branch: main
+    name: mbiarnes
+    credentials_id: mbiarnes
   jenkins_config_path: .ci/jenkins
 buildchain_config:
   git:
@@ -103,11 +104,11 @@ buildchain_config:
 maven:
   settings_file_id: kogito_release_settings
   nexus:
-    release_url: https://repository.jboss.org/nexus
+    release_url: https://repository.stage.jboss.org/nexus
     release_repository: jboss-releases-repository
-    staging_profile_url: https://repository.jboss.org/nexus/content/groups/kogito-public/
-    staging_profile_id: 1976dd1c18392a
-    build_promotion_profile_id: ea49ccd6f174
+    staging_profile_url: https://repository.stage.jboss.org/nexus/content/groups/kogito-public/
+    staging_profile_id: 2161b7b8da0080
+    build_promotion_profile_id: 1966c60aff37d
   artifacts_repository: ''
   artifacts_upload_repository:
     url: https://repository.jboss.org/nexus/content/repositories/snapshots/
@@ -123,7 +124,7 @@ cloud:
     namespace: kiegroup
     latest_git_branch: main
 jenkins:
-  email_creds_id: KOGITO_CI_EMAIL_TO
+  email_creds_id: MBIARNES_MAIL
   default_tools:
     jdk: kie-jdk11
     maven: kie-maven-3.8.7
