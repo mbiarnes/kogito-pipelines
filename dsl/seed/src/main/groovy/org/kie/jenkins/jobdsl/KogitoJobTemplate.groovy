@@ -202,6 +202,7 @@ class KogitoJobTemplate {
             }
             */
             // Redefine to keep days instead of number of builds
+            disabled()
             logRotator {
                 daysToKeep(10)
             }
