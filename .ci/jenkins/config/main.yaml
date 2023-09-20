@@ -14,8 +14,10 @@ ecosystem:
     - kie-tools.*
 git:
   branches:
+  - name: main
+    seed:
+      branch: main
   - name: michibkTestSetup
-    main_branch: true
 seed:
   config_file:
     git:
