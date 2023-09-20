@@ -15,13 +15,7 @@ ecosystem:
 git:
   branches:
   - name: michibkTestSetup
-  - name: main
     main_branch: true
-    seed:
-      branch: main
-  - name: 1.44.x
-    seed:
-      branch: seed-kogito-1.44.x
 seed:
   config_file:
     git:
