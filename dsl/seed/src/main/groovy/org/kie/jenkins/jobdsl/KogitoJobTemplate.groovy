@@ -195,6 +195,12 @@ class KogitoJobTemplate {
 
         def job = createPipelineJob(script, jobParams)
         job?.with {
+
+            // pullrequest should be disabled only on main branch
+            if (Utils.isMainBranch(script)) {
+                disabled()
+            }
+
             // Redefine to keep days instead of number of builds
             logRotator {
                 daysToKeep(10)
